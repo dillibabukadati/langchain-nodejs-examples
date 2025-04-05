@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Widget Demo</title>
+    <!-- Add the widget's CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8fafc;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #0ea5e9;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #64748b;
+            font-size: 1.1em;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .code-block pre {
+            margin: 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chatbot Widget Demo</h1>
+            <p>A simple and customizable chatbot widget for your website</p>
+        </div>
+
+        <div class="content">
+            <h2>Quick Start</h2>
+            <p>Add these scripts to your HTML file:</p>
+            <div class="code-block">
+                <pre><code>&lt;!-- Add React and ReactDOM --&gt;
+&lt;script src="https://unpkg.com/react@18/umd/react.production.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Add the widget's CSS and script --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+&lt;script src="chatbot-widget.umd.js"&gt;&lt;/script&gt;
+
+&lt;!-- Initialize the widget --&gt;
+&lt;script&gt;
+  ChatbotWidget.init({
+    apiHost: 'http://localhost:3000'
+  });
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <h2>Try it out!</h2>
+            <p>The chatbot widget should appear in the bottom right corner of this page.</p>
+            <p>You can customize the appearance by adding theme options:</p>
+            <div class="code-block">
+                <pre><code>ChatbotWidget.init({
+  apiHost: 'http://localhost:3000',
+  theme: {
+    chatWindow: {
+      height: 600,
+      width: 400
+    }
+  }
+});</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+    <!-- Add the widget's CSS and script -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dillibabukadati.github.io/chatbot-widget/chatbot-widget.umd.js"></script>
+
+    <!-- Initialize the widget -->
+    <script>
+        window.onload = function() {
+            if (window.ChatbotWidget) {
+                ChatbotWidget.init({
+                    apiHost: 'http://localhost:3000',
+                    theme: {
+                        chatWindow: {
+                            height: 600,
+                            width: 400
+                        }
+                    }
+                });
+            }
+        };
+    </script>
+</body>
+</html>
