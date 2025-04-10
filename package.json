@@ -11,11 +11,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@langchain/community": "^0.3.39",
     "@langchain/core": "^0.3.43",
     "@langchain/groq": "^0.2.0",
+    "@langchain/ollama": "^0.2.0",
+    "@langchain/pinecone": "^0.2.0",
+    "@langchain/textsplitters": "^0.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "langchain": "^0.3.19"
+    "langchain": "^0.3.19",
+    "pdf-parse": "^1.1.1"
   }
 }
