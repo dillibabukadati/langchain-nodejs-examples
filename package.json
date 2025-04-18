@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@langchain/community": "^0.3.40",
     "@langchain/core": "^0.3.43",
     "@langchain/groq": "^0.2.0",
     "cors": "^2.8.5",
