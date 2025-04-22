@@ -5,6 +5,7 @@ import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
 
 import dotenv from "dotenv";
 dotenv.config();
+import { getTodos, addTodo } from "./tools.js";
 
 const tavilySearchTool = new TavilySearchResults({
   apiKey: process.env.TAVILY_API_KEY,
@@ -13,6 +14,8 @@ const tavilySearchTool = new TavilySearchResults({
 
 const toolsByName = {
   tavily_search_results_json: tavilySearchTool,
+  get_todos: getTodos,
+  add_todo: addTodo,
 };
 
 const model = new ChatGroq({
@@ -27,7 +30,7 @@ const messages = [
   ),
 ];
 
-const modelWithTools = model.bindTools([tavilySearchTool]);
+const modelWithTools = model.bindTools([tavilySearchTool, getTodos, addTodo]);
 
 export const sendMessage = async (message) => {
   messages.push(new HumanMessage(message));
