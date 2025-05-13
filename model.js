@@ -50,7 +50,8 @@ Final Answer: the final answer to the original input question
 Begin!
 
 Question: {input}
-Thought: {agent_scratchpad}
+Thought:{agent_scratchpad}
+
 `;
 
 const prompt = PromptTemplate.fromTemplate(template);
@@ -81,7 +82,8 @@ while (true) {
   const llmResponse = await llm.invoke(formattedPrompt);
   agentStep = await parser.parse(llmResponse.content);
 
-
+  console.log(agentStep);
+  
   if (agentStep.tool === undefined) {
     console.log("Final Answer:", agentStep.returnValues.output);
     break;
